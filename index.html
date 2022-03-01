@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" id="outline">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Coding Assignment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="outline"> 
+    This is the: BODY
+    <div class="container" style="text-align:center">
+        <div>
+             <h1>🔼 Bubbling  & Capturing 🔽</h1>
+             <p>When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.</p>
+         </div>
+        <div class="card text-white bg-secondary mb-3">
+            <h2>Bubbling at a glance</h2>
+            <div class="card-body-">
+            <form id="bubbling" onclick="alert('form')">FORM
+                <div id="bubbling2" onclick="alert('div')">DIV
+                  <p id="bubbling3" onclick="alert('p')">P</p>
+                </div>
+              </form>
+            </div>
+        </div>
+        <div class="card text-white bg-secondary mb-3">
+            <h2>Bubbling with event.target and this</h2>
+            <div class="card-body">
+            <ul>
+                <li><strong>event.target</strong> – is the “target” element that initiated the event, it doesn’t change through the bubbling process.</li>
+                <li><strong>this</strong> – is the “current” element, the one that has a currently running handler on it.</li>
+             </ul>
+            <div class="col-lg-12" align="center">
+                <form id="form">FORM
+                    <div id="div">DIV
+                      <p id="p">P</p>
+                    </div>
+                  </form>
+            </div>
+            </div>
+        </div>
+    
+
+    <div class="card text-white bg-secondary mb-3" style="text-align:center">
+        <h2>Stopping bubbling with event.stopPropagation()</h2>
+            <div class="card-body">
+                <div onclick="alert(`✅ the bubbling DOES reach here`)">
+                  <button class="btn btn-success" onclick="alert('Button')">Bubbling works</button>
+                </div>
+          </div>
+            <div class="card-body">
+                  <div onclick="alert(`❌ the bubbling DOESN'T reach here`)">
+                    <button class="btn btn-danger" onclick="event.stopPropagation()">Bubble stopped</button>
+                  </div>
+            </div>
+    </div>
+
+    <div class="card text-white bg-secondary mb-3" style="text-align:center">
+        <h2>Capturing</h2>
+            <div class="col-md-12">
+            <ol>
+                <li>Capturing phase – the event goes down to the element.</li>
+                <li>Target phase – the event reached the target element.</li>
+                <li>Bubbling phase – the event bubbles up from the element.</li>
+            </ol>  
+            <h2>👇</h2>   
+        </div>
+    </div>
+</div>
+<form id="outline">This is the: FORM
+    <div id="outline">This is the: DIV
+      <p id="outline">
+             This is the: P
+        </p>
+    </div>
+  </form>
+  
+<!--JS-->
+    <script src="script.js"></script>
+</body>
+</html>
